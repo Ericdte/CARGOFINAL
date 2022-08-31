@@ -21,7 +21,7 @@ $sql = "INSERT INTO `chargement` ( `nomc`,`ref`,`tip`,`spec`,`date`, `time1`,`ti
 $result=mysqli_query($con,$sql);
 if ($result) {
 //echo"Data inserted successfully";
-header('location:transporteur.php');
+c
 } else {
 die(mysqli_error($con));
 }

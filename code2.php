@@ -30,5 +30,12 @@ if(isset($_POST['save_multiple_data']))
         header("Location: insert-multiple-data.php");
         exit(0);
     }
+
+
+
+
+
+
+
 }
 ?>

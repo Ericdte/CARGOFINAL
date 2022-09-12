@@ -2,26 +2,38 @@
 
 $con = mysqli_connect("localhost","root","","logistic");
 
-if(isset($_POST['submit']))
+if(isset($_POST['submit']) )
 {
-    $chargement_id = $_POST['chargement_id'];
+    
     $prix = $_POST['prix'];
+    $ref  = $_POST['ref'];
+
  
   
 
     
 
-        $query = "INSERT INTO `tarrif_transporteur` ( `chargement_id`,`prix`) VALUES ('$chargement_id','$prix')";
+        $query = "INSERT INTO `tarrif_transporteur` (`prix`,`ref`) VALUES ('$prix', '$ref')";
         $result= mysqli_query($con, $query);
     
-
-        if ($result) {
+          
+       
+    
+        if ($result)  {
             //echo"Data inserted successfully";
             header('location:commande.php');
         } else {
             die(mysqli_error($con));
         }
         
+        
+
+    }
     
-}
+
+  
+        
+       
+    
+    
 ?>

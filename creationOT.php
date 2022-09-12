@@ -64,8 +64,9 @@ $result = mysqli_query($con, $query);
                                <td>'.$prix.'</td>
                               <td>
                                <a  data-mdb-toggle="modal" data-mdb-target="#exampleModal1" href="update_OT.php? updateid='.$id.'"><i class="fas fa-marker"></i></a>  
-                               <a  href="delete_OT.php? deleteid='.$id.'"><i class="fas fa-trash"></i></a>
-							   <a  data-mdb-toggle="modal" data-mdb-target="#exampleModal2"><i class="fas fa-truck"></i></i></a>  
+                               <a  href="action3.php? deleteid='.$id.'"><i class="fas fa-trash"></i></a>
+							   <a  data-mdb-toggle="modal" data-mdb-target="#exampleModal2"  href="code1.php?  deleteid='.$id.'"><i class="fas fa-truck"></i></i></a>
+							    <a   href="action3.php? deleteid='.$id.'"><i class="fas fa-truck-moving"></i></i></i></a>    
 							 
                                </td>
                                </tr>  
@@ -931,6 +932,11 @@ $result = mysqli_query($con, $query);
 							<input type="number" class="text-currency form-control" name="prix" style="padding:10px 20px;
 		border:solid 1px #ccc;
 		border-radius:5px;" />
+						</div>
+						<br>
+						<div class="form-group">
+							<label style="margin-left:25px;">Référence:</label>
+							<input type="text" class="form-control" name="ref" value=<?php echo $ref;?>>
 						</div>
 					</div>
 					<div class="modal-footer">

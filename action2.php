@@ -32,6 +32,11 @@ for($i=0; $i <$count ; $i++){
 if ($livraison_id) {
    $sql3="INSERT INTO `chargement_livraison` (`chargement_id`, `livraison_id`) VALUES ('$chargement_id', '$livraison_id')";
     $con->query($sql3);
+    
+$chargement_liraison_id=$con->insert_id;
+$sql4="INSERT INTO `chargement,livraison` (`chargement_liraison_id`) VALUES ('$chargement_livraison_id')";
+   $con->query($sql4);
+   # code...
    # code...
 }
 else{
@@ -39,9 +44,17 @@ else{
    $result=$mysqli->query($sql4) or die($mysqli->error);
    $row=$result-> fetch_assoc();
    $chargement_id=$row['id'];
-   $sql3="INSERT INTO `chargement_livraison` (`chargement_id`, `livraison_id`) VALUES ('$chargement_id', '$livraison_id')";
+   $sql3="INSERT INTO `commande` (`chargement_id`, `livraison_id`) VALUES ('$chargement_id', '$livraison_id')";
    $con->query($sql3);
+   
+$sql4="INSERT INTO `chargement,livraison` (`chargement_liraison_id`) VALUES ('$chargement_livraison_id')";
+   $con->query($sql4);
 }
+
+if ($chargement_livraison_id) {
+   
+}
+
 
 
 }

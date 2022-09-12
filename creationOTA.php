@@ -1,7 +1,7 @@
 <?php include('dbcon.php');?>
 
 <?php  
-$query ="SELECT chargement.id, chargement.name, chargement.ref, chargement.ville, chargement.date,  livraison.id, livraison.villee, livraison.prix  FROM chargement , livraison WHERE chargement.id = livraison.id  ORDER BY chargement.id DESC";  
+$query ="SELECT exploitation.id, exploitation.name, exploitation.ref, exploitation.ville, exploitation.date,  exploitation2.id, exploitation2.villee, exploitation2.prix  FROM exploitation , exploitation2 WHERE exploitation.id = exploitation2.id  ORDER BY exploitation.id DESC";  
 $result = mysqli_query($con, $query);  
 ?>
 

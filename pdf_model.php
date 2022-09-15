@@ -6,12 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
-
+.container{
+  margin-bottom: 10px;
+}
   .reference-container{
    border: 2 solid black;
    padding-top: 10px;
 padding-bottom: 10px;
-/* margin-bottom: 20px; */
+margin-bottom: 20px;
   }
   .item{
 
@@ -27,6 +29,15 @@ padding-bottom: 10px;
   .in-container{
     display: inline-flex;
     margin-left: 25px;
+    /* margin-right: 60px; */
+    margin-bottom: -5px;
+
+  }
+  .inn-container{
+    display: inline-flex;
+    margin-left: 25px;
+    margin-right: 60px;
+    margin-bottom: -5px;
 
   }
 
@@ -41,7 +52,7 @@ padding-bottom: 10px;
 } */
 
   .detail-block{
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .title{
@@ -52,7 +63,7 @@ padding-bottom: 10px;
   .info-block{
     border: 2 solid black;
     padding: 5;
-    
+   
  line-height: 1;
  font-size: smaller;
   }
@@ -74,7 +85,7 @@ padding-bottom: 10px;
   .info-block p{
  /* margin-bottom: 1; */
  line-height: 1;
- font-size: 9px;
+ font-size: 12px;
  /* margin-bottom: -6; */
   }
 </style>
@@ -98,12 +109,12 @@ padding-bottom: 10px;
 </div></div>
   </div>
 <div class="title-block"><div class="title-item">le 02/08/2022</div>
-<div class="title title-item" style="width:33rem; ">CONFIRMATION AFFRÈTEMENT</div>
+<div class="title title-item" style="width:37.2rem; ">CONFIRMATION AFFRÈTEMENT</div>
 
 </div>
   
       
-    <h2 style="text-align:center">Référence à rappeler sur votre facture : 22080066</h2>
+    <h2 style="text-align:center; margin: -3 0 -3 0;">Référence à rappeler sur votre facture : 22080066</h2>
   
     <div class="reference-container">
 <div class="item"><div class="in-container">
@@ -127,19 +138,19 @@ padding-bottom: 10px;
 </div></div>
   </div>
     <div class="detail-block">
-<div class="item"><div class="in-container">
+<div class="item"><div class="inn-container">
   <div class="in-item title">Marchandises :</div>
   <div class="in-item">02/08/2022</div>
   <div class="in-item">08h00 - 12h00</div>
 </div></div>
-<div class="item"><div class="in-container">
+<div class="item"><div class="inn-container">
   <div class="in-item ">N° Commande : IMPORT MAROC DE ALSTOM CABLIANCE</div>
   <div class="in-item">Site : DACHSER France S.A.S. Agence Cargoplus 01120 - Montluel FR</div>
   <div class="in-item">Marchandise : 4.80 palette(s) -- Poids : 1000.00kg</div>
 </div></div>
   </div>
     <div class="detail-block">
-<div class="item"><div class="in-container">
+<div class="item"><div class="inn-container">
   <div class="in-item title">Livraison</div>
   <div class="in-item">02/08/2022</div>
   <div class="in-item">08h00 - 12h00</div>

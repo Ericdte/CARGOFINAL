@@ -1,18 +1,24 @@
 <?php
+include('./dbcon.php');
 require 'vendor/autoload.php';
-// include 'dbcon.php';
-// reference the Dompdf namespace
+include 'dbcon.php';
 use Dompdf\Dompdf;
+// $id = $_GET['id'];
+$sql = mysqli_query($con,"SELECT * FROM transporteur WHERE id=2;");
+$user = mysqli_fetch_assoc($sql);
+
+
+// reference the Dompdf namespace
 // $sql = mysqli_query($con, "");
 // instantiate and use the dompdf class
-$dompdf = new Dompdf(  );
+$dompdf = new Dompdf();
 $dompdf->getOptions()->setChroot("C:\\laragon\\www\\CARGOFINAL\\public");
 
 ob_start();
 require 'pdf_model.php';
 $html =  ob_get_contents();
 ob_get_clean();
-define("DOMPDF_ENABLE_REMOTE", false);
+// define("DOMPDF_ENABLE_REMOTE", false);
 
 $dompdf->loadHtml($html);
 

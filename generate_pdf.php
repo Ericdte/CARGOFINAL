@@ -4,8 +4,8 @@ require 'vendor/autoload.php';
 include 'dbcon.php';
 use Dompdf\Dompdf;
 // $id = $_GET['id'];
-$sql = mysqli_query($con,"SELECT * FROM transporteur WHERE id=2;");
-$user = mysqli_fetch_assoc($sql);
+$sql = mysqli_query($con,"SELECT transporteur.nom_transporteur,transporteur.ville_transporteur,transporteur.tva_transporteur, transporteur.tel_transporteur,transporteur.email_transporteur FROM transporteur WHERE id=2;");
+$transporteur = mysqli_fetch_assoc($sql);
 
 
 // reference the Dompdf namespace

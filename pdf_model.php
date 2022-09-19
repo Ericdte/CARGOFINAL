@@ -103,15 +103,15 @@
         <div class="in-item title">Rotation Trans Logistics SPRL</div>
         <div class="in-item">Rue Uyttenhove 37 bte 827</div>
         <div class="in-item">1090 Jette - BELGIQUE</div>
-        <div class="in-item">TVA : BE 0719812056 Transpoteur: <?=$user['email_transporteur'] ?>
+        <div class="in-item">TVA : <?=$transporteur['tva_transporteur'] ?> 
         </div>
       </div>
     </div>
     <div class="item">
       <div class="in-container">
-        <div class="in-item">Tél : 02 25 80 08 93</div>
+        <div class="in-item">Tél :  <?=$transporteur['tel_transporteur'] ?></div>
         <div class="in-item">Fax :</div>
-        <div class="in-item">Email : marcel.rotation@gmail.com</div>
+        <div class="in-item">Email :  <?=$transporteur['email_transporteur'] ?></div>
         <div class="in-item">N° de licence : 3731001
         </div>
       </div>

@@ -1,6 +1,4 @@
 <?php include('dbcon.php');?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -17,7 +15,7 @@
 </head>
 
 <body>
-	<br /><br /> t
+	<br /><br />
 	<div class="container">
 		<h3 align="center">Ordres de Transport non Affecté</h3>
 		<br />
@@ -40,6 +38,10 @@
 					<th scope="col">Actions</th>
 				</tr>
 			</thead>
+
+
+
+
 			<?php  
 			                                if(isset($_GET['from_date']) && isset($_GET['to_date']))
 											{
@@ -65,8 +67,8 @@
 				<td>
 					<a data-mdb-toggle="modal" data-mdb-target="#exampleModal1"
 						href="update_OT.php? updateid='.$id.'"><i class="fas fa-marker"></i></a>
-					<a href="action3.php? deleteid='.$id.'"><i class="fas fa-trash"></i></a>
-					<a data-mdb-toggle="modal" data-mdb-target="#exampleModal2" href="code1.php?  deleteid='.$id.'"><i
+					<a hre f="action3.php? deleteid='.$id.'"><i class="fas fa-trash"></i></a>
+					=<a data-mdb-toggle="modal" data-mdb-target="#exampleModal2" href="code1.php?  deleteid='.$id.'"><i
 							class="fas fa-truck"></i></i></a>
 					<a href="action3.php? deleteid='.$id.'"><i class="fas fa-truck-moving"></i></i></i></a>
 
@@ -83,10 +85,6 @@
 											}
                       
                           ?>
-
-
-
-
 		</table>
 	</div>
 	</div>

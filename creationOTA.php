@@ -1,9 +1,5 @@
 <?php include('dbcon.php');?>
 
-<?php  
-$query ="SELECT exploitation.id, exploitation.name, exploitation.ref, exploitation.ville, exploitation.date,  exploitation2.id, exploitation2.villee, exploitation2.prix  FROM exploitation , exploitation2 WHERE exploitation.id = exploitation2.id  ORDER BY exploitation.id DESC";  
-$result = mysqli_query($con, $query);  
-?>
 
 
 <!DOCTYPE html>
@@ -44,32 +40,44 @@ $result = mysqli_query($con, $query);
 				</tr>
 			</thead>
 			<?php  
-                          while($row = mysqli_fetch_array($result))  
-                          {  
-                            $id = $row['id'];
-                            $name = $row['name'];
-                            $ville= $row['ville'];
-                            $date= $row['date'];
-                            $villee= $row['villee'];
-                            $ref = $row['ref'];
-                            $prix = $row['prix'];
-                               echo '  
-                               <tr>  
-                               <th scope="row">'.$id.'</th>
-                               <td>'.$name.'</td>                                       
-                               <td>'.$ville.'</td>
-                               <td>'.$date.'</td>
-                               <td>'.$villee.'</td>
-                               <td>'.$ref.'</td>
-                               <td>'.$prix.'</td>
-                              <td>
-                               <a  data-mdb-toggle="modal" data-mdb-target="#exampleModal1" href="update_OT.php? updateid='.$id.'"><i class="fas fa-marker"></i></a>  
-                               <a  href="delete_transporteur.php? deleteid='.$id.'"><i class="fas fa-trash"></i></a>
-							   <a><i class="fas fa-truck"></i></a>
-                               </td>
-                               </tr>  
-                               ';  
-                          }  
+                                                      if(isset($_GET['from_date']) && isset($_GET['to_date']))
+													  {
+														  $from_date = $_GET['from_date'];
+														  $to_date = $_GET['to_date'];
+														  $query ="SELECT chargement.id, chargement.name, chargement.ref, chargement.ville, chargement.date,  livraison.id, livraison.villee, livraison.prix  FROM chargement , livraison WHERE chargement.id = livraison.id AND chargement.date  Between '$from_date' and  '$to_date' ORDER BY chargement.id DESC";  
+														  $result = mysqli_query($con, $query); 
+					  
+													  if(mysqli_num_rows($result) > 0)
+														  {
+															  foreach($result as $row)
+															  {
+																  ?>
+
+			<tr>
+				<td scope="row"><?=$row['id'];?></td>
+				<td><?=$row['name'];?></td>
+				<td><?=$row['ville'];?></td>
+				<td><?=$row['date'];?></td>
+				<td><?=$row['villee'];?></td>
+				<td><?=$row['ref'];?></td>
+				<td><?=$row['prix'];?></td>
+				<td>
+					<a data-mdb-toggle="modal" data-mdb-target="#exampleModal1"
+						href="update_OT.php? updateid='.$id.'"><i class="fas fa-marker"></i></a>
+					<a href="delete_transporteur.php? deleteid='.$id.'"><i class="fas fa-trash"></i></a>
+					<a><i class="fas fa-truck"></i></a>
+				</td>
+			</tr>
+
+			<?php
+													}
+												}
+												 else
+												{
+													echo "No Record Found";
+												}
+											}
+                      
                           ?>
 		</table>
 	</div>
@@ -660,9 +668,8 @@ $result = mysqli_query($con, $query);
 
 					</div>
 					<div class="modal-footer">
-
-
-						<input type="text" class="form-contol" style="position:relative; left: -1000px;">
+						<div>
+						</div> <input type="text" class="form-contol" style="position:relative; left: -1000px;">
 						<input type="text" class="form-contol" style="position:relative; left: -1000px;">
 						<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
 							Retour

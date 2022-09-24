@@ -89,7 +89,7 @@
 				</a>
 				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
 					<li>
-						<a class="dropdown-item" href="#">Some news</a>
+						<a class="dropdown-item" href='logout.php'>Disconnect</a>
 					</li>
 					<li>
 						<a class="dropdown-item" href="#">Another news</a>

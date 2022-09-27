@@ -950,7 +950,7 @@
 						<br>
 						<div class="form-group">
 							<label style="margin-left:25px;">Référence:</label>
-							<input type="text" class="form-control" name="ref" value=<?php echo $ref;?>>
+							<input type="text" class="form-control" name="ref">
 						</div>
 					</div>
 					<div class="modal-footer">

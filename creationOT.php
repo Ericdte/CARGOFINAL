@@ -1,10 +1,5 @@
 <?php include('dbcon.php');?>
 
-<?php  
-$query ="SELECT chargement.id, chargement.name, chargement.ref, chargement.ville, chargement.date,  livraison.id, livraison.villee, livraison.prix  FROM chargement , livraison WHERE chargement.id = livraison.id  ORDER BY chargement.id DESC";  
-$result = mysqli_query($con, $query);  
-?>
-
 
 <!DOCTYPE html>
 <html>
@@ -26,6 +21,8 @@ $result = mysqli_query($con, $query);
 	<div class="container">
 		<h3 align="center">Ordres de Transport non Affecté</h3>
 		<br />
+
+
 		<button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
 			Créer un OT
 		</button> <br /><br />
@@ -44,35 +41,52 @@ $result = mysqli_query($con, $query);
 				</tr>
 			</thead>
 			<?php  
-                          while($row = mysqli_fetch_array($result))  
-                          {  
-                            $id = $row['id'];
-                            $name = $row['name'];
-                            $ville= $row['ville'];
-                            $date= $row['date'];
-                            $villee= $row['villee'];
-                            $ref = $row['ref'];
-                            $prix = $row['prix'];
-                               echo '  
-                               <tr>  
-                               <th scope="row">'.$id.'</th>
-                               <td>'.$name.'</td>                                       
-                               <td>'.$ville.'</td>
-                               <td>'.$date.'</td>
-                               <td>'.$villee.'</td>
-                               <td>'.$ref.'</td>
-                               <td>'.$prix.'</td>
-                              <td>
-                               <a  data-mdb-toggle="modal" data-mdb-target="#exampleModal1" href="update_OT.php? updateid='.$id.'"><i class="fas fa-marker"></i></a>  
-                               <a  href="action3.php? deleteid='.$id.'"><i class="fas fa-trash"></i></a>
-							   <a  data-mdb-toggle="modal" data-mdb-target="#exampleModal2"  href="code1.php?  deleteid='.$id.'"><i class="fas fa-truck"></i></i></a>
-							    <a   href="action3.php? deleteid='.$id.'"><i class="fas fa-truck-moving"></i></i></i></a>    
-							 
-                               </td>
-                               </tr>  
-                               ';  
-                          }  
+			                                if(isset($_GET['from_date']) && isset($_GET['to_date']))
+											{
+												$from_date = $_GET['from_date'];
+												$to_date = $_GET['to_date'];
+												$query ="SELECT chargement.id, chargement.name, chargement.ref, chargement.ville, chargement.date,  livraison.id, livraison.villee, livraison.prix  FROM chargement , livraison WHERE chargement.id = livraison.id AND chargement.date  Between '$from_date' and  '$to_date' ORDER BY chargement.id DESC";  
+                                                $result = mysqli_query($con, $query); 
+			
+											if(mysqli_num_rows($result) > 0)
+												{
+													foreach($result as $row)
+													{
+														?>
+
+			<tr>
+				<td scope="row"><?=$row['id'];?></td>
+				<td><?=$row['name'];?></td>
+				<td><?=$row['ville'];?></td>
+				<td><?=$row['date'];?></td>
+				<td><?=$row['villee'];?></td>
+				<td><?=$row['ref'];?></td>
+				<td><?=$row['prix'];?></td>
+				<td>
+					<a data-mdb-toggle="modal" data-mdb-target="#exampleModal1"
+						href="update_OT.php? updateid='.$id.'"><i class="fas fa-marker"></i></a>
+					<a href="action3.php? deleteid='.$id.'"><i class="fas fa-trash"></i></a>
+					<a data-mdb-toggle="modal" data-mdb-target="#exampleModal2" href="code1.php?  deleteid='.$id.'"><i
+							class="fas fa-truck"></i></i></a>
+					<a href="action3.php? deleteid='.$id.'"><i class="fas fa-truck-moving"></i></i></i></a>
+
+				</td>
+			</tr>
+
+			<?php
+													}
+												}
+												 else
+												{
+													echo "No Record Found";
+												}
+											}
+                      
                           ?>
+
+
+
+
 		</table>
 	</div>
 	</div>
@@ -936,7 +950,7 @@ $result = mysqli_query($con, $query);
 						<br>
 						<div class="form-group">
 							<label style="margin-left:25px;">Référence:</label>
-							<input type="text" class="form-control" name="ref" value=<?php echo $ref;?>>
+							<input type="text" class="form-control" name="ref">
 						</div>
 					</div>
 					<div class="modal-footer">

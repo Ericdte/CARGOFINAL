@@ -15,7 +15,7 @@ $sql = "INSERT INTO `infogenclient` (`tva`, `nomc`,`mail1`, `tel1`, `pay`, `vill
 $result=mysqli_query($con,$sql);
 if ($result) {
     //echo"Data inserted successfully";
-    header('location:table_clients.php');
+    header('location:clients.php');
 } else {
     die(mysqli_error($con));
 }
@@ -102,7 +102,7 @@ $query ="SELECT * FROM infogenclient ORDER BY ID DESC";
                                <td>'.$adrec.'</td>
                                <td>'.$ges.'</td> 
                                <td>
-                               <a  data-mdb-toggle="modal" data-mdb-target="#staticBackdrop1" href="update_client.php? updateid='.$id.'"><i class="fas fa-marker"></i></a>  
+                               <a href="update_client.php? updateid='.$id.'"><i class="fas fa-marker"></i></a>  
                              <a  href="delete_client.php? deleteid='.$id.'"><i class="fas fa-trash"></i></a>
                              
 
@@ -189,68 +189,6 @@ $query ="SELECT * FROM infogenclient ORDER BY ID DESC";
 
 
 
-	<!-- Modal Edit-->
-	<div class="modal fade" id="staticBackdrop1" data-mdb-backdrop="static" data-mdb-keyboard="false" tabindex="-1"
-		aria-labelledby="staticBackdropLabel" aria-hidden="true">
-		<div class="modal-dialog modal-xl">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="staticBackdropLabel">Modifier Client</h5>
-					<button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<form id="collect" method="post">
-						<div class="form-group">
-							<label>TVA:</label>
-							<input type="text" class="form-control" name="tva" value=<?php echo $tva;?>>
-						</div>
-						<div class="form-group">
-							<label>Nom du Client:</label>
-							<input type="text" class="form-control" name="nomc" autocomplete="off"
-								value=<?php echo $nomc;?>>
-						</div>
-						<div class="form-group">
-							<label>Email:</label>
-							<input type="text" class="form-control" name="mail1" value=<?php echo $mail1;?>>
-						</div>
-						<div class="form-group">
-							<label>Téléphone:</label>
-							<input type="text" class="form-control" name="tel1" value=<?php echo $tel1;?>>
-						</div>
-						<div class="form-group">
-							<label>Pay:</label>
-							<input type="text" class="form-control" name="pay" value=<?php echo $pay;?>>
-						</div>
-						<div class="form-group">
-							<label>Ville:</label>
-							<input type="text" class="form-control" name="ville" value=<?php echo $ville;?>>
-						</div>
-						<div class="form-group">
-							<label>Adresse:</label>
-							<input type="text" class="form-control" name="adresse" value=<?php echo $adresse;?>>
-						</div>
-						<div class="form-group">
-							<label>Facturation:</label>
-							<input type="text" class="form-control" name="adref" value=<?php echo $adref;?>>
-						</div>
-						<div class="form-group">
-							<label>Contabilité:</label>
-							<input type="text" class="form-control" name="adrec" value=<?php echo $adrec;?>>
-						</div>
-						<div class="form-group">
-							<label>Gestionaire Client:</label>
-							<input type="text" class="form-control" name="ges" value=<?php echo $ges;?>>
-						</div>
-
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Retour</button>
-					<button type="submit" name="submit" class="btn btn-primary">Enregistre</button>
-				</div>
-				</form>
-			</div>
-		</div>
-	</div>
 
 
 </body>

@@ -56,7 +56,7 @@
 
 					</li>
 					<li>
-						<a href="#" class="dropbtn"> <i class="fa fa-bar-chart" aria-hidden="true">
+						<a href="rapport.php" class="dropbtn"> <i class="fa fa-bar-chart" aria-hidden="true">
 								<div class="menu-items">
 									Rapports
 								</div>

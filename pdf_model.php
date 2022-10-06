@@ -103,15 +103,18 @@
         <div class="in-item title">Rotation Trans Logistics SPRL</div>
         <div class="in-item">Rue Uyttenhove 37 bte 827</div>
         <div class="in-item">1090 Jette - BELGIQUE</div>
-        <div class="in-item">TVA : <?=$transporteur['tva_transporteur'] ?> 
+        <div class="in-item">TVA : 
+        984920392093
         </div>
       </div>
     </div>
     <div class="item">
       <div class="in-container">
-        <div class="in-item">Tél :  <?=$transporteur['tel_transporteur'] ?></div>
+        <div class="in-item">Tél :
+         +237690596606
+          </div>
         <div class="in-item">Fax :</div>
-        <div class="in-item">Email :  <?=$transporteur['email_transporteur'] ?></div>
+        <div class="in-item">Email : eric@gmail.com </div>
         <div class="in-item">N° de licence : 3731001
         </div>
       </div>
@@ -129,15 +132,15 @@
   <div class="reference-container">
     <div class="item">
       <div class="in-container">
-        <div class="in-item">A l'attention de Piotr Widarski , Ray Trans Sp. z o.o.</div>
-        <div class="in-item">Adresse : Andrzeja Ma?kowskiego 30/1, 70-304 Szczecin Drzestowo</div>
-        <div class="in-item">N° TVA / VAT Number : PL8522643563</div>
+        <div class="in-item">A l'attention de  <?=$transporteur['nom_transporteur'] ?> </div>
+        <div class="in-item">Adresse : <?=$transporteur['ville_transporteur']?></div>
+        <div class="in-item">N° TVA / VAT Number : <?=$transporteur['tva_transporteur'] ?>  </div>
       </div>
     </div>
     <div class="item">
       <div class="in-container">
-        <div class="in-item">Tél : +48 603 878 692</div>
-        <div class="in-item">Mail : Piotr.Widarski@raytrans.eu </div>
+        <div class="in-item">Tél : <?=$transporteur['tel_transporteur'] ?></div>
+        <div class="in-item">Mail : <?=$transporteur['email_transporteur'] ?> </div>
       </div>
     </div>
   </div>
@@ -146,7 +149,7 @@
       <div class="in-container">
         <div class="in-item title">Marchandises :</div>
         <div class="in-item">Marchandises Générales / Savoyarde / Tautliner / VUL</div>
-        <div class="in-item">Support : 4.80 palette(s) - Poids : 1000.00kg</div>
+        <!-- <div class="in-item">Support : 4.80 palette(s) - Poids : 1000.00kg</div> -->
       </div>
     </div>
     <div class="item">
@@ -159,15 +162,15 @@
     <div class="item">
       <div class="inn-container">
         <div class="in-item title">Marchandises :</div>
-        <div class="in-item">02/08/2022</div>
-        <div class="in-item">08h00 - 12h00</div>
+        <div class="in-item"><?=$chargement['date'] ?></div>
+        <div class="in-item"><?=$chargement['time1'] ?> - <?=$chargement['time2'] ?></div>
       </div>
     </div>
     <div class="item">
       <div class="inn-container">
-        <div class="in-item ">N° Commande : IMPORT MAROC DE ALSTOM CABLIANCE</div>
-        <div class="in-item">Site : DACHSER France S.A.S. Agence Cargoplus 01120 - Montluel FR</div>
-        <div class="in-item">Marchandise : 4.80 palette(s) -- Poids : 1000.00kg</div>
+        <div class="in-item ">N° Commande : <?=$chargement['name'] ?></div>
+        <div class="in-item">Site : <?=$chargement['noms']?></div>
+        <!-- <div class="in-item">Marchandise : 4.80 palette(s) -- Poids : 1000.00kg</div> -->
       </div>
     </div>
   </div>
@@ -175,15 +178,15 @@
     <div class="item">
       <div class="inn-container">
         <div class="in-item title">Livraison</div>
-        <div class="in-item">02/08/2022</div>
-        <div class="in-item">08h00 - 12h00</div>
+        <div class="in-item"><?=$chargement['datee'] ?></div>
+        <div class="in-item"><?=$chargement['timee1'] ?> - <?=$chargement['timee2'] ?></div>
       </div>
     </div>
     <div class="item">
       <div class="in-container">
-        <div class="in-item">N° Commande : IMPORT MAROC DE ALSTOM CABLIANCE</div>
-        <div class="in-item">Site : DACHSER France S.A.S. Agence Cargoplus 01120 - Montluel FR</div>
-        <div class="in-item">Marchandise : 4.80 palette(s) -- Poids : 1000.00kg</div>
+        <div class="in-item">N° Commande :  <?=$chargement['namee'] ?></div>
+        <div class="in-item">Site :  <?=$chargement['nomss'] ?></div>
+        <!-- <div class="in-item">Marchandise : 4.80 palette(s) -- Poids : 1000.00kg</div> -->
       </div>
     </div>
   </div>
